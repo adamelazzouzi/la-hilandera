@@ -1,0 +1,49 @@
+/* ============================================
+   PÁGINAS LEGALES
+   ============================================ */
+
+.legal {
+    padding: calc(72px + var(--esp-12)) 0 var(--esp-16);
+    background: var(--fondo);
+    min-height: calc(100vh - 72px);
+}
+
+.legal-contenido {
+    max-width: 800px;
+}
+
+.legal-titulo {
+    font-family: var(--fuente-titulos);
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    color: var(--texto);
+    margin-bottom: var(--esp-6);
+}
+
+.legal-texto {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--texto-suave);
+    margin-bottom: var(--esp-8);
+    white-space: pre-line;
+}
+
+.legal-volver {
+    margin-top: var(--esp-4);
+}
+
+@media (max-width: 600px) {
+    .legal {
+        padding: calc(72px + var(--esp-8)) 0 var(--esp-12);
+    }
+
+    .legal-titulo {
+        font-size: 28px;
+    }
+
+    .legal-texto {
+        font-size: 15px;
+    }
+}

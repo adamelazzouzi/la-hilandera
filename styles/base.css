@@ -1,0 +1,217 @@
+/* ============================================
+   BASE - LA HILANDERA
+   Reset + variables + tipografía
+   ============================================ */
+
+/* ============================================
+   FUENTES
+   ============================================ */
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('../assets/fonts/PlayfairDisplay-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('../assets/fonts/PlayfairDisplay-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lora';
+    src: url('../assets/fonts/Lora-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lora';
+    src: url('../assets/fonts/Lora-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ============================================
+   VARIABLES
+   ============================================ */
+:root {
+    /* Colores del negocio (del JSON) */
+    --primario: #6B4F3A;
+    --secundario: #C9A66B;
+    --fondo: #F7F1E5;
+    --texto: #2E2A26;
+
+    /* Variaciones */
+    --primario-oscuro: #4A3629;
+    --primario-claro: #8B6F5A;
+    --secundario-oscuro: #A8864A;
+    --secundario-claro: #E0C48F;
+    --texto-suave: #5C5650;
+    --texto-tenue: #8A837A;
+    --blanco: #FFFFFF;
+    --crema: #FAF6ED;
+    --borde: #E5DDD0;
+
+    /* Tipografía */
+    --fuente-titulos: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    --fuente-cuerpo: 'Lora', Georgia, 'Times New Roman', serif;
+
+    /* Espaciado */
+    --esp-1: 4px;
+    --esp-2: 8px;
+    --esp-3: 12px;
+    --esp-4: 16px;
+    --esp-5: 20px;
+    --esp-6: 24px;
+    --esp-8: 32px;
+    --esp-10: 40px;
+    --esp-12: 48px;
+    --esp-16: 64px;
+    --esp-20: 80px;
+    --esp-24: 96px;
+
+    /* Radios (redondeados, artesanal) */
+    --radio-sm: 4px;
+    --radio-md: 8px;
+    --radio-lg: 16px;
+    --radio-full: 999px;
+
+    /* Sombras */
+    --sombra-sm: 0 2px 8px rgba(46, 42, 38, 0.06);
+    --sombra-md: 0 8px 24px rgba(46, 42, 38, 0.08);
+    --sombra-lg: 0 16px 48px rgba(46, 42, 38, 0.12);
+
+    /* Transiciones */
+    --transicion: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    --transicion-lenta: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+
+    /* Ancho máximo de contenido */
+    --max-ancho: 1200px;
+    --max-ancho-texto: 720px;
+}
+
+/* ============================================
+   RESET
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: var(--fuente-cuerpo);
+    background: var(--fondo);
+    color: var(--texto);
+    min-height: 100vh;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--fuente-titulos);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--texto);
+}
+
+p {
+    margin-bottom: var(--esp-4);
+}
+
+a {
+    color: var(--primario);
+    text-decoration: none;
+    transition: color var(--transicion);
+}
+
+a:hover {
+    color: var(--secundario);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: inherit;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+/* ============================================
+   CONTENEDOR
+   ============================================ */
+#app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor {
+    width: 100%;
+    max-width: var(--max-ancho);
+    margin: 0 auto;
+    padding: 0 var(--esp-4);
+}
+
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--crema);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secundario);
+    border-radius: var(--radio-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primario);
+}
+
+/* ============================================
+   SELECCIÓN
+   ============================================ */
+::selection {
+    background: var(--secundario);
+    color: var(--texto);
+}
+
+/* ============================================
+   UTILIDADES
+   ============================================ */
+.oculto {
+    display: none !important;
+}
+
+.texto-centro {
+    text-align: center;
+}
