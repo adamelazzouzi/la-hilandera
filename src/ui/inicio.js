@@ -58,10 +58,7 @@ export function montarInicio(contenedor, negocio) {
                     </div>
                 </div>
                 <div class="hero-visual">
-                    <div class="hero-imagen-placeholder">
-                        <span class="hero-imagen-icono">🖼️</span>
-                        <p class="hero-imagen-texto">${hero.imagenDescripcion}</p>
-                    </div>
+                    <img src="assets/imagenes/hero.jpg" alt="Interior de La Hilandera" class="hero-imagen">
                 </div>
             </div>
         </section>
@@ -69,10 +66,7 @@ export function montarInicio(contenedor, negocio) {
         <section class="sobre-nosotros animar" id="sobre-nosotros">
             <div class="contenedor sobre-contenido">
                 <div class="sobre-visual">
-                    <div class="sobre-imagen-placeholder">
-                        <span class="sobre-imagen-icono">🖼️</span>
-                        <p class="sobre-imagen-texto">${sobre.imagenDescripcion}</p>
-                    </div>
+                    <img src="assets/imagenes/sobre-nosotros.jpg" alt="Mesa de encuadernación de La Hilandera" class="sobre-imagen">
                 </div>
                 <div class="sobre-texto">
                     <p class="seccion-eyebrow">Sobre nosotros</p>
@@ -89,11 +83,17 @@ export function montarInicio(contenedor, negocio) {
                     <h2 class="seccion-titulo">Lo que puedes llevarte a casa</h2>
                 </div>
                 <div class="productos-grid">
-                    ${productos.map(producto => `
+                    ${productos.map((producto, i) => {
+                        const imagenes = [
+                            'assets/imagenes/producto-cuaderno.jpg',
+                            'assets/imagenes/producto-cafe.jpg',
+                            'assets/imagenes/producto-set-encuadernacion.jpg',
+                            'assets/imagenes/producto-seleccion-lectura.jpg'
+                        ];
+                        return `
                         <article class="producto-card">
-                            <div class="producto-imagen-placeholder">
-                                <span class="producto-imagen-icono">🖼️</span>
-                                <p class="producto-imagen-texto">${producto.imagenDescripcion}</p>
+                            <div class="producto-imagen">
+                                <img src="${imagenes[i]}" alt="${producto.nombre}" class="producto-imagen-img">
                             </div>
                             <div class="producto-info">
                                 <h3 class="producto-nombre">${producto.nombre}</h3>
@@ -101,7 +101,7 @@ export function montarInicio(contenedor, negocio) {
                                 <p class="producto-precio">${producto.precio}</p>
                             </div>
                         </article>
-                    `).join('')}
+                    `}).join('')}
                 </div>
             </div>
         </section>
@@ -133,14 +133,20 @@ export function montarInicio(contenedor, negocio) {
                     <h2 class="seccion-titulo">Un paseo por La Hilandera</h2>
                 </div>
                 <div class="galeria-grid">
-                    ${galeria.map((imagen) => `
+                    ${galeria.map((imagen, i) => {
+                        const imagenesGaleria = [
+                            'assets/imagenes/galeria-fachada.jpg',
+                            'assets/imagenes/galeria-mesa-encuadernacion.jpg',
+                            'assets/imagenes/galeria-rincon-lectura.jpg',
+                            'assets/imagenes/galeria-barra-cafeteria.jpg',
+                            'assets/imagenes/galeria-taller-grupo.jpg',
+                            'assets/imagenes/galeria-maquina-coser.jpg'
+                        ];
+                        return `
                         <div class="galeria-item">
-                            <div class="galeria-imagen-placeholder">
-                                <span class="galeria-imagen-icono">🖼️</span>
-                                <p class="galeria-imagen-texto">${imagen.descripcion}</p>
-                            </div>
+                            <img src="${imagenesGaleria[i]}" alt="${imagen.descripcion}" class="galeria-imagen">
                         </div>
-                    `).join('')}
+                    `}).join('')}
                 </div>
             </div>
         </section>
@@ -189,10 +195,16 @@ export function montarInicio(contenedor, negocio) {
                     <h2 class="seccion-titulo">Quién te recibe</h2>
                 </div>
                 <div class="equipo-grid">
-                    ${equipo.map(persona => `
+                    ${equipo.map((persona, i) => {
+                        const imagenesEquipo = [
+                            'assets/imagenes/equipo-lucia.jpg',
+                            'assets/imagenes/equipo-mateo.jpg',
+                            'assets/imagenes/equipo-ines.jpg'
+                        ];
+                        return `
                         <article class="equipo-card">
-                            <div class="equipo-imagen-placeholder">
-                                <span class="equipo-imagen-icono">🖼️</span>
+                            <div class="equipo-imagen">
+                                <img src="${imagenesEquipo[i]}" alt="${persona.nombre}" class="equipo-imagen-img">
                             </div>
                             <div class="equipo-info">
                                 <h3 class="equipo-nombre">${persona.nombre}</h3>
@@ -200,7 +212,7 @@ export function montarInicio(contenedor, negocio) {
                                 <p class="equipo-descripcion">${persona.descripcion}</p>
                             </div>
                         </article>
-                    `).join('')}
+                    `}).join('')}
                 </div>
             </div>
         </section>

@@ -1366,3 +1366,92 @@ a.contacto-valor:hover {
         scroll-margin-top: 80px;
     }
 }
+
+/* ============================================
+   IMÁGENES REALES
+   ============================================ */
+
+/* Hero */
+.hero-imagen {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: var(--radio-lg);
+    box-shadow: var(--sombra-lg);
+    display: block;
+}
+
+/* Sobre nosotros */
+.sobre-imagen {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: var(--radio-lg);
+    box-shadow: var(--sombra-lg);
+    display: block;
+}
+
+/* Productos */
+.producto-imagen {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-bottom: 1px solid var(--borde);
+}
+
+.producto-imagen-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform var(--transicion);
+}
+
+.producto-card:hover .producto-imagen-img {
+    transform: scale(1.03);
+}
+
+/* Galería */
+.galeria-imagen {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: var(--radio-md);
+    display: block;
+    transition: transform var(--transicion);
+}
+
+.galeria-item:hover .galeria-imagen {
+    transform: scale(1.02);
+}
+
+/* Equipo */
+.equipo-imagen {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-bottom: 1px solid var(--borde);
+}
+
+.equipo-imagen-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform var(--transicion);
+}
+
+.equipo-card:hover .equipo-imagen-img {
+    transform: scale(1.03);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .hero-imagen {
+        aspect-ratio: 1 / 1;
+    }
+
+    .sobre-imagen {
+        aspect-ratio: 4 / 3;
+    }
+}
